@@ -27,10 +27,13 @@
 <body>
     <!-- Header / Navigation -->
     <header class="header">
-        <h1 class="header-h1">MySocial</h1>
+        <h1 class="header-h1"><i class="header-icon fa-solid fa-link"></i> MySocial</h1>
         <div class="header-buttons">
+            <button id="toggleLightModeBtn" class="header-btn">
+                <i id="toggleLightModeBtnIcon" class="header-btn-icon fa-solid fa-moon"></i>
+            </button>
             <button class="header-btn">
-                <i class="fa-solid fa-circle-question"></i>
+                <i class="header-btn-icon fa-solid fa-circle-question"></i>
             </button>
         </div>
     </header>
@@ -49,8 +52,8 @@
                 </div>
                 <!-- Information -->
                 <div class="sidebar-option">
-                    <div class="sidebar-content--header">
-                        <h3 class="sidebar-content-h3">Information</h3>
+                    <div id="sidebarInformationHeader" class="sidebar-content--header">
+                        <h3 id="sidebarInformationHeaderText" class="sidebar-content-h3">Information</h3>
                         <button id="toggleInformationBtn" class="toggle-btn">
                             <i id="toggleInformationBtnIcon" class="toggle-btn-icon fa-solid fa-plus"></i>
                         </button>
@@ -59,8 +62,8 @@
                 </div>
                 <!-- Templates -->
                 <div class="sidebar-option">
-                    <div class="sidebar-content--header">
-                        <h3 class="sidebar-content-h3">Templates</h3>
+                    <div id="sidebarTemplatesHeader" class="sidebar-content--header">
+                        <h3 id="sidebarTemplatesHeaderText" class="sidebar-content-h3">Templates</h3>
                         <button id="toggleTemplatesBtn" class="toggle-btn">
                             <i id="toggleTemplatesBtnIcon" class="toggle-btn-icon fa-solid fa-plus"></i>
                         </button>
@@ -69,8 +72,8 @@
                 </div>
                 <!-- Customisation -->
                 <div class="sidebar-option">
-                    <div class="sidebar-content--header">
-                        <h3 class="sidebar-content-h3">Customisation</h3>
+                    <div id="sidebarCustomisationHeader" class="sidebar-content--header">
+                        <h3 id="sidebarCustomisationHeaderText" class="sidebar-content-h3">Customisation</h3>
                         <button id="toggleCustomisationBtn" class="toggle-btn">
                             <i id="toggleCustomisationBtnIcon" class="toggle-btn-icon fa-solid fa-plus"></i>
                         </button>
