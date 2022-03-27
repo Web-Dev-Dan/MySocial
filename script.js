@@ -57,10 +57,6 @@ toggleCustomisationBtn.addEventListener('click', function () {
 });
 
 
-{/* <i class="fa-solid fa-minus"></i> */ }
-
-
-
 // Update MySocial
 function updateMySocial() {
 
