@@ -69,7 +69,7 @@ toggleTemplatesBtn.addEventListener('click', toggleTemplates);
 toggleCustomisationBtn.addEventListener('click', toggleCustomisation);
 
 document.addEventListener('click', (e) => {
-    console.log(e.target);
+    // Open Sidebar Sections:
     if (e.target.classList.contains('sidebar-content--header') || e.target.classList.contains('sidebar-content-h3')) {
         if (e.target.id === 'sidebarInformationHeader' || e.target.id === 'sidebarInformationHeaderText') {
             toggleInformation();
@@ -116,7 +116,53 @@ function toggleCustomisation() {
 
 
 
+
+// Detect Input Focus
+const updateNameInput = document.getElementById('updateNameInput');
+const updateLocationInput = document.getElementById('updateLocationInput');
+const updateAboutTextarea = document.getElementById('updateAboutTextarea');
+
+document.addEventListener('keyup', function () {
+    if (updateNameInput === document.activeElement || updateLocationInput === document.activeElement || updateAboutTextarea === document.activeElement) {
+        updateMySocial();
+    } else {
+        return;
+    }
+});
+
+
+
+
+
 // Update MySocial
 function updateMySocial() {
+    const cardName = document.getElementById('cardName');
+    const cardLocation = document.getElementById('cardLocation');
+    const cardAbout = document.getElementById('cardAbout');
+    const cardSkills = document.getElementById('cardSkills');
 
+    // Update Name
+    if (updateNameInput.value === '') {
+        cardName.textContent = 'Daniel Healy';
+    } else {
+        cardName.textContent = updateNameInput.value;
+    }
+
+    // Update Location
+    if (updateLocationInput.value === '') {
+        cardLocation.textContent = 'London, UK';
+    } else {
+        cardLocation.textContent = updateLocationInput.value;
+    }
+
+    // Update About (remove if field is empty)
+    if (updateAboutTextarea.value === '') {
+        cardAbout.classList.add('element-hidden');
+    } else {
+        cardAbout.classList.remove('element-hidden');
+        cardAbout.textContent = updateAboutTextarea.value;
+    }
+
+    // Update Skills (remove if none selected)
+    let skillBtnSelected = false;
 }
