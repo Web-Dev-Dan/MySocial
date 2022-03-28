@@ -48,7 +48,7 @@
             <div class="sidebar-content">
                 <!-- Header -->
                 <div class="sidebar-content--title">
-                    <h3 class="sidebar-content--title-h3">Edit</h3>
+                    <h3 class="sidebar-content--title-h3">Create</h3>
                 </div>
                 <!-- Information -->
                 <div class="sidebar-option">
@@ -58,7 +58,88 @@
                             <i id="toggleInformationBtnIcon" class="toggle-btn-icon fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <div class="sidebar-container information-container container-hidden"></div>
+                    <div class="sidebar-container information-container container-hidden">
+                        <!-- Edit Profile Image -->
+                        <div class="info-box">
+                            <h3 class="info-box--title"><i class="info-box--title-icon fa-solid fa-link"></i>Image:
+                            </h3>
+                            <input class="choose-file-btn-hidden" id="file" type="file" name="uploadImage"
+                                accept="image/*">
+                            <button class="choose-file-btn">
+                                <label class="choose-file-btn-label" for="file">
+                                    <i class="choose-file-btn-icon far fa-image"></i>Choose an Image
+                                </label>
+                            </button>
+                        </div>
+                        <!-- Edit Name -->
+                        <div class="info-box">
+                            <h3 class="info-box--title"><i class="info-box--title-icon fa-solid fa-link"></i>Name:
+                            </h3>
+                            <input id="updateNameInput" class="info-box--input" type="text"
+                                placeholder="Enter your name...">
+                        </div>
+                        <!-- Edit Location -->
+                        <div class="info-box">
+                            <h3 class="info-box--title"><i class="info-box--title-icon fa-solid fa-link"></i>Location:
+                            </h3>
+                            <input id="updateLocationInput" class="info-box--input" type="text"
+                                placeholder="Enter your location...">
+                        </div>
+                        <!-- Edit About -->
+                        <div class="info-box">
+                            <h3 class="info-box--title"><i class="info-box--title-icon fa-solid fa-link"></i>About:
+                            </h3>
+                            <textarea id="updateAboutTextarea" class="info-box--textarea" type="text"
+                                placeholder="Write something about yourself..."></textarea>
+                        </div>
+                        <!-- Edit Skills -->
+                        <div class="info-box">
+                            <h3 class="info-box--title"><i class="info-box--title-icon fa-solid fa-link"></i>Skills:
+                            </h3>
+                            <div class="info-box--skills">
+                                <button class="info-box--skills-btn skills-btn-selected">
+                                    <i class="skills-btn-icon fa-brands fa-html5"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-css3-alt"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-bootstrap"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-sass"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-js-square"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-react"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-vuejs"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-angular"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-node-js"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-python"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-php"></i>
+                                </button>
+
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-java"></i>
+                                </button>
+                                <button class="info-box--skills-btn">
+                                    <i class="skills-btn-icon fa-brands fa-figma"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Templates -->
                 <div class="sidebar-option">
@@ -94,13 +175,31 @@
                     </div>
                 </div>
                 <!-- Name -->
-                <h2 class="social--name">Daniel Healy</h2>
+                <h2 id="cardName" class="social--name">Daniel Healy</h2>
                 <!-- Location -->
                 <div class="social--location">
                     <i class="social--location-icon fa-solid fa-location-dot"></i>
-                    <p class="social--location-text">Sapporo, Japan</p>
+                    <p id="cardLocation" class="social--location-text">London, UK</p>
                 </div>
+                <!-- About -->
+                <p id="cardAbout" class="social--about element-hidden">I'm a self-taught front-end web developer and
+                    teacher!</p>
                 <!-- Skills -->
+                <div id="cardSkills" class="social--skills">
+                    <p class="social--skills-box">HTML</p>
+                    <p class="social--skills-box">CSS</p>
+                    <p class="social--skills-box">Bootstrap</p>
+                    <p class="social--skills-box">SCSS</p>
+                    <p class="social--skills-box">JavaScript</p>
+                    <p class="social--skills-box">React</p>
+                    <p class="social--skills-box">Vue</p>
+                    <p class="social--skills-box">Angular</p>
+                    <p class="social--skills-box">Node JS</p>
+                    <p class="social--skills-box">Python</p>
+                    <p class="social--skills-box">PHP</p>
+                    <p class="social--skills-box">Java</p>
+                    <p class="social--skills-box">Figma</p>
+                </div>
                 <!-- Links -->
             </div>
         </main>
