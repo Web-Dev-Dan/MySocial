@@ -115,8 +115,6 @@ function toggleCustomisation() {
 }
 
 
-
-
 // Detect Input Focus
 const updateNameInput = document.getElementById('updateNameInput');
 const updateLocationInput = document.getElementById('updateLocationInput');
@@ -131,6 +129,107 @@ document.addEventListener('keyup', function () {
 });
 
 
+// Detect Skills Button Change
+let skillBtnsSelected = 0;
+const skillsBtns = document.querySelectorAll('.info-box--skills-btn');
+const cardSkills = document.getElementById('cardSkills');
+
+const skillHTML = document.getElementById('skillHTML');
+const skillCSS = document.getElementById('skillCSS');
+const skillBootstrap = document.getElementById('skillBootstrap');
+const skillSCSS = document.getElementById('skillSCSS');
+const skillJavaScript = document.getElementById('skillJavaScript');
+const skillReact = document.getElementById('skillReact');
+const skillVue = document.getElementById('skillVue');
+const skillAngular = document.getElementById('skillAngular');
+const skillNodeJS = document.getElementById('skillNodeJS');
+const skillPython = document.getElementById('skillPython');
+const skillPHP = document.getElementById('skillPHP');
+const skillJava = document.getElementById('skillJava');
+const skillFigma = document.getElementById('skillFigma');
+
+skillsBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        if (e.target.classList.contains('info-box--skills-btn')) {
+            updateSkills(e.target);
+        } else if (e.target.classList.contains('skills-btn-icon')) {
+            updateSkills(e.target.parentElement);
+        }
+    });
+});
+
+function updateSkills(button) {
+    if (button.classList.contains('btn-html')) {
+        button.classList.toggle('skills-btn-selected');
+        skillHTML.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-css')) {
+        button.classList.toggle('skills-btn-selected');
+        skillCSS.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-bootstrap')) {
+        button.classList.toggle('skills-btn-selected');
+        skillBootstrap.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-scss')) {
+        button.classList.toggle('skills-btn-selected');
+        skillSCSS.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-javascript')) {
+        button.classList.toggle('skills-btn-selected');
+        skillJavaScript.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-react')) {
+        button.classList.toggle('skills-btn-selected');
+        skillReact.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-vue')) {
+        button.classList.toggle('skills-btn-selected');
+        skillVue.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-angular')) {
+        button.classList.toggle('skills-btn-selected');
+        skillAngular.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-node-js')) {
+        button.classList.toggle('skills-btn-selected');
+        skillNodeJS.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-python')) {
+        button.classList.toggle('skills-btn-selected');
+        skillPython.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-php')) {
+        button.classList.toggle('skills-btn-selected');
+        skillPHP.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-java')) {
+        button.classList.toggle('skills-btn-selected');
+        skillJava.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else if (button.classList.contains('btn-figma')) {
+        button.classList.toggle('skills-btn-selected');
+        skillFigma.classList.toggle('skills-box-shown');
+        updateNumberOfSkillsSelected(button);
+    } else {
+        return;
+    }
+}
+
+function updateNumberOfSkillsSelected(btn) {
+    // Update Number of Skills Buttons Selected:
+    if (btn.classList.contains('skills-btn-selected')) {
+        skillBtnsSelected += 1;
+    } else {
+        skillBtnsSelected -= 1;
+    }
+    // Display or Hide Skills Container:
+    if (skillBtnsSelected === 0) {
+        cardSkills.classList.add('element-hidden');
+    } else {
+        cardSkills.classList.remove('element-hidden');
+    }
+}
 
 
 
@@ -143,7 +242,7 @@ function updateMySocial() {
 
     // Update Name
     if (updateNameInput.value === '') {
-        cardName.textContent = 'Daniel Healy';
+        cardName.textContent = 'John Smith';
     } else {
         cardName.textContent = updateNameInput.value;
     }
@@ -162,7 +261,4 @@ function updateMySocial() {
         cardAbout.classList.remove('element-hidden');
         cardAbout.textContent = updateAboutTextarea.value;
     }
-
-    // Update Skills (remove if none selected)
-    let skillBtnSelected = false;
 }
