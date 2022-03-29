@@ -115,6 +115,8 @@ function toggleCustomisation() {
 }
 
 
+
+
 // Detect Input Focus
 const updateNameInput = document.getElementById('updateNameInput');
 const updateLocationInput = document.getElementById('updateLocationInput');
@@ -151,8 +153,10 @@ const skillFigma = document.getElementById('skillFigma');
 skillsBtns.forEach(btn => {
     btn.addEventListener('click', function (e) {
         if (e.target.classList.contains('info-box--skills-btn')) {
+            // console.log(e.target);
             updateSkills(e.target);
         } else if (e.target.classList.contains('skills-btn-icon')) {
+            // console.log(e.target.parentElement);
             updateSkills(e.target.parentElement);
         }
     });
@@ -228,6 +232,132 @@ function updateNumberOfSkillsSelected(btn) {
         cardSkills.classList.add('element-hidden');
     } else {
         cardSkills.classList.remove('element-hidden');
+    }
+}
+
+
+// Adding Links
+let linkBtnsSelected = 0;
+const addLinkBtns = document.querySelectorAll('.link-btn');
+const cardLinks = document.getElementById('cardLinks');
+
+const linkProfile = document.getElementById('linkProfile');
+const linkGitHub = document.getElementById('linkGitHub');
+const linkLinkedIn = document.getElementById('linkLinkedIn');
+const linkTwitter = document.getElementById('linkTwitter');
+const linkHashnode = document.getElementById('linkHashnode');
+const linkYouTube = document.getElementById('linkYouTube');
+const linkFacebook = document.getElementById('linkFacebook');
+const linkInstagram = document.getElementById('linkInstagram');
+const linkEmail = document.getElementById('linkEmail');
+
+
+addLinkBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        if (e.target.classList.contains('link-btn')) {
+            toggleURLInputs(e.target);
+            updateLinks(e.target);
+        } else if (e.target.classList.contains('link-btn-icon')) {
+            toggleURLInputs(e.target.parentElement);
+            updateLinks(e.target.parentElement);
+        }
+    });
+});
+
+function toggleURLInputs(button) {
+    let urlInputField = button.nextElementSibling;
+
+    if (button.classList.contains('link-btn-selected')) {
+        button.classList.toggle('link-btn-selected');
+        urlInputField.classList.add('element-hidden');
+        updateNumberOfLinksSelected(button);
+    } else {
+        button.classList.toggle('link-btn-selected');
+        urlInputField.classList.remove('element-hidden');
+        updateNumberOfLinksSelected(button);
+    }
+}
+
+function updateNumberOfLinksSelected(btn) {
+    // Update Number of Links Buttons Selected:
+    if (btn.classList.contains('link-btn-selected')) {
+        linkBtnsSelected += 1;
+        // console.log(linkBtnsSelected);
+    } else {
+        linkBtnsSelected -= 1;
+        // console.log(linkBtnsSelected);
+    }
+    // Display or Hide Links Container:
+    if (linkBtnsSelected === 0) {
+        cardLinks.classList.add('element-hidden');
+    } else {
+        cardLinks.classList.remove('element-hidden');
+    }
+}
+
+function updateLinks(button) {
+    if (button.classList.contains('link-btn-profile')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkProfile.classList.remove('element-hidden');
+        } else {
+            linkProfile.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-github')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkGitHub.classList.remove('element-hidden');
+        } else {
+            linkGitHub.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-linkedin')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkLinkedIn.classList.remove('element-hidden');
+        } else {
+            linkLinkedIn.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-twitter')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkTwitter.classList.remove('element-hidden');
+        } else {
+            linkTwitter.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-hashnode')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkHashnode.classList.remove('element-hidden');
+        } else {
+            linkHashnode.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-youtube')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkYouTube.classList.remove('element-hidden');
+        } else {
+            linkYouTube.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-facebook')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkFacebook.classList.remove('element-hidden');
+        } else {
+            linkFacebook.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-instagram')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkInstagram.classList.remove('element-hidden');
+        } else {
+            linkInstagram.classList.add('element-hidden');
+        }
+    }
+    if (button.classList.contains('link-btn-email')) {
+        if (button.classList.contains('link-btn-selected')) {
+            linkEmail.classList.remove('element-hidden');
+        } else {
+            linkEmail.classList.add('element-hidden');
+        }
     }
 }
 
