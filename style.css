@@ -1,8 +1,6 @@
 :root {
-    /* --font-primary: 'Oswald', sans-serif; */
     --font-primary: 'Raleway', sans-serif;
     --color-primary: #333;
-
     --background-color: #ffffff;
     --text-color: #333333;
     --gray: rgb(235, 235, 235);
@@ -124,6 +122,7 @@ html, body {
     height: 100%;
     overflow: hidden;
     padding: 2rem;
+    padding-bottom: 5rem;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -190,7 +189,6 @@ html, body {
 }
 
 .sidebar-container {
-    /* background-color: red; */
     min-height: 20rem;
 }
 
@@ -199,7 +197,6 @@ html, body {
 }
 
 .info-box {
-    /* background-color: yellow; */
     width: 100%;
     min-height: 4rem;
     display: flex;
@@ -209,6 +206,11 @@ html, body {
     margin-top: 1rem;
 }
 
+.info-box--profile-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 .choose-file-btn-hidden {
     display: none;
@@ -216,6 +218,7 @@ html, body {
 
 .choose-file-btn {
     flex: 1;
+    min-height: 4.5rem;
     border: none;
     display: flex;
     transition: all .5s;
@@ -234,7 +237,6 @@ html, body {
 .choose-file-btn-label {
     width: 100%;
     height: 100%;
-    background-color: red;
     background-color: var(--background-color);
     color: var(--text-color);
     font-size: 1.8rem;
@@ -244,6 +246,46 @@ html, body {
     align-items: center;
     filter: brightness(95%);
     transition: all .5s;
+}
+
+.profile-img-preview-container {
+    width: 100%;
+    height: 16rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img-preview-circle {
+    background-color: lightgray;
+    background-position: center;
+    background-size: cover;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+.profile-img-preview-circle--delete-btn {
+    background-color: var(--background-color);
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    border: .1rem solid var(--text-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    filter: brightness(95%);
+}
+
+.profile-img-preview-circle--delete-btn:hover {
+    cursor: pointer;
+}
+
+.delete-btn-icon {
+    font-size: 2rem;
+    color: var(--text-color);
 }
 
 .info-box--title {
@@ -302,7 +344,6 @@ html, body {
     height: 4.5rem;
     margin: .3rem;
     border: .1rem solid gray;
-    /* transition: all .5s; */
 }
 
 .info-box--skills-btn:hover {
@@ -319,7 +360,6 @@ html, body {
 .skills-btn-selected {
     background-color: var(--text-color);
     color: var(--background-color);
-    /* transition: all .5s; */
 }
 
 .skills-btn-selected .skills-btn-icon {
@@ -330,7 +370,6 @@ html, body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
 }
 
 .info-box--links-btn {
@@ -400,10 +439,6 @@ html, body {
 
 
 
-
-
-
-
 .toggle-sidebar-icon-closed {
     transform: rotate(180deg);
 }
@@ -412,12 +447,12 @@ html, body {
     display: none;
 }
 
-/* MAIN */
+/* ---------- MAIN ---------- */
 .main {
     background-color: var(--gray);
     flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     overflow: hidden;
     transition: all .5s;
@@ -426,6 +461,7 @@ html, body {
 
 .social {
     background-color: white;
+    margin: 10rem 0;
     padding: 5rem 10rem;
     border-radius: .5rem;
     display: flex;
@@ -437,6 +473,8 @@ html, body {
 
 .social--pic {
     background-color: lightgray;
+    background-position: center;
+    background-size: cover;
     width: 16rem;
     height: 16rem;
     border-radius: 50%;
@@ -479,6 +517,8 @@ html, body {
 
 .social--location-text {
     color: gray;
+    text-align: center;
+    line-height: 1.5;
 }
 
 .social--about {
@@ -574,10 +614,6 @@ html, body {
     font-size: 3rem;
     color: white;
 }
-
-
-
-
 
 
 
