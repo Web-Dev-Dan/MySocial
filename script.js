@@ -153,10 +153,8 @@ const skillFigma = document.getElementById('skillFigma');
 skillsBtns.forEach(btn => {
     btn.addEventListener('click', function (e) {
         if (e.target.classList.contains('info-box--skills-btn')) {
-            // console.log(e.target);
             updateSkills(e.target);
         } else if (e.target.classList.contains('skills-btn-icon')) {
-            // console.log(e.target.parentElement);
             updateSkills(e.target.parentElement);
         }
     });
@@ -282,10 +280,8 @@ function updateNumberOfLinksSelected(btn) {
     // Update Number of Links Buttons Selected:
     if (btn.classList.contains('link-btn-selected')) {
         linkBtnsSelected += 1;
-        // console.log(linkBtnsSelected);
     } else {
         linkBtnsSelected -= 1;
-        // console.log(linkBtnsSelected);
     }
     // Display or Hide Links Container:
     if (linkBtnsSelected === 0) {
@@ -362,13 +358,106 @@ function updateLinks(button) {
 }
 
 
+// Detect Link Inputs Active and Update Card Button URL
+const linkBtnInputs = document.querySelectorAll('.link-btn-input');
+
+document.addEventListener('keyup', function () {
+    linkBtnInputs.forEach(input => {
+        if (input === document.activeElement) {
+            if (input.value !== '') {
+                // Add hyperlink, target, and rel attributes to each button when input field has value !== '':
+                if (input.classList.contains('link-input-profile')) {
+                    linkProfile.href = `${input.value}`;
+                    linkProfile.target = "_blank";
+                    linkProfile.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-github')) {
+                    linkGitHub.href = `${input.value}`;
+                    linkGitHub.target = "_blank";
+                    linkGitHub.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-linkedin')) {
+                    linkLinkedIn.href = `${input.value}`;
+                    linkLinkedIn.target = "_blank";
+                    linkLinkedIn.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-twitter')) {
+                    linkTwitter.href = `${input.value}`;
+                    linkTwitter.target = "_blank";
+                    linkTwitter.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-hashnode')) {
+                    linkHashnode.href = `${input.value}`;
+                    linkHashnode.target = "_blank";
+                    linkHashnode.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-youtube')) {
+                    linkYouTube.href = `${input.value}`;
+                    linkYouTube.target = "_blank";
+                    linkYouTube.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-facebook')) {
+                    linkFacebook.href = `${input.value}`;
+                    linkFacebook.target = "_blank";
+                    linkFacebook.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-instagram')) {
+                    linkInstagram.href = `${input.value}`;
+                    linkInstagram.target = "_blank";
+                    linkInstagram.rel = "noopener noreferrer";
+                } else if (input.classList.contains('link-input-email')) {
+                    linkEmail.href = `${input.value}`;
+                    linkEmail.target = "_blank";
+                    linkEmail.rel = "noopener noreferrer";
+                }
+            } else {
+                // Remove hyperlink, target, and rel attributes from each button when input field is empty:
+                if (input.classList.contains('link-input-profile')) {
+                    linkProfile.removeAttribute('href');
+                    linkProfile.removeAttribute('target');
+                    linkProfile.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-github')) {
+                    linkGitHub.removeAttribute('href');
+                    linkGitHub.removeAttribute('target');
+                    linkGitHub.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-linkedin')) {
+                    linkLinkedIn.removeAttribute('href');
+                    linkLinkedIn.removeAttribute('target');
+                    linkLinkedIn.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-twitter')) {
+                    linkTwitter.removeAttribute('href');
+                    linkTwitter.removeAttribute('target');
+                    linkTwitter.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-hashnode')) {
+                    linkHashnode.removeAttribute('href');
+                    linkHashnode.removeAttribute('target');
+                    linkHashnode.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-youtube')) {
+                    linkYouTube.removeAttribute('href');
+                    linkYouTube.removeAttribute('target');
+                    linkYouTube.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-facebook')) {
+                    linkFacebook.removeAttribute('href');
+                    linkFacebook.removeAttribute('target');
+                    linkFacebook.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-instagram')) {
+                    linkInstagram.removeAttribute('href');
+                    linkInstagram.removeAttribute('target');
+                    linkInstagram.removeAttribute('rel');
+                } else if (input.classList.contains('link-input-email')) {
+                    linkEmail.removeAttribute('href');
+                    linkEmail.removeAttribute('target');
+                    linkEmail.removeAttribute('rel');
+                }
+            }
+            updateMySocial();
+        } else {
+            return;
+        }
+    });
+});
+
+
+
 
 // Update MySocial
 function updateMySocial() {
     const cardName = document.getElementById('cardName');
     const cardLocation = document.getElementById('cardLocation');
     const cardAbout = document.getElementById('cardAbout');
-    const cardSkills = document.getElementById('cardSkills');
 
     // Update Name
     if (updateNameInput.value === '') {
