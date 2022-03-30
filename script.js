@@ -451,6 +451,40 @@ document.addEventListener('keyup', function () {
 });
 
 
+// Upload and Delete Image
+const uploadImageInput = document.querySelector('.choose-profile-img-btn');
+const deleteProfileImgBtn = document.getElementById('deleteProfileImgBtn');
+let uploadedImage = '';
+const profileImgPreviewContainer = document.querySelector('.profile-img-preview-container');
+const profileImgPreviewCircle = document.querySelector('.profile-img-preview-circle');
+const cardProfileImgCircle = document.getElementById('cardProfileImgCircle');
+const cardProfileImgPlaceholder = document.getElementById('cardProfileImgPlaceholder');
+const addProfileImgButton = document.querySelector('.choose-file-btn');
+
+uploadImageInput.addEventListener('change', function () {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+        profileImgPreviewContainer.classList.remove('element-hidden');
+        uploadedImage = reader.result;
+        profileImgPreviewCircle.style.backgroundImage = `url(${uploadedImage})`;
+        cardProfileImgCircle.style.backgroundImage = `url(${uploadedImage})`;
+        cardProfileImgPlaceholder.classList.add('element-hidden');
+        addProfileImgButton.classList.add('element-hidden');
+    });
+    reader.readAsDataURL(this.files[0]);
+});
+
+deleteProfileImgBtn.addEventListener('click', function () {
+    profileImgPreviewCircle.style.backgroundImage = 'none';
+    cardProfileImgCircle.style.backgroundImage = 'none';
+    cardProfileImgPlaceholder.classList.remove('element-hidden');
+    profileImgPreviewContainer.classList.add('element-hidden');
+    addProfileImgButton.classList.remove('element-hidden');
+    uploadImageInput.value = '';
+    uploadedImage = '';
+});
+
+
 
 
 // Update MySocial
