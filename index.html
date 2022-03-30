@@ -63,13 +63,22 @@
                         <div class="info-box">
                             <h3 class="info-box--title"><i class="info-box--title-icon fa-solid fa-link"></i>Image:
                             </h3>
-                            <input class="choose-file-btn-hidden" id="file" type="file" name="uploadImage"
-                                accept="image/*">
-                            <button class="choose-file-btn">
-                                <label class="choose-file-btn-label" for="file">
-                                    <i class="choose-file-btn-icon far fa-image"></i>Choose an Image
-                                </label>
-                            </button>
+                            <div class="info-box--profile-img">
+                                <input class="choose-profile-img-btn choose-file-btn-hidden" id="file" type="file"
+                                    name="uploadImage" accept="image/*">
+                                <button class="choose-file-btn">
+                                    <label class="choose-file-btn-label" for="file">
+                                        <i class="choose-file-btn-icon far fa-image"></i>Choose an Image
+                                    </label>
+                                </button>
+                                <div class="profile-img-preview-container element-hidden">
+                                    <div class="profile-img-preview-circle">
+                                        <button id="deleteProfileImgBtn" class="profile-img-preview-circle--delete-btn">
+                                            <i class="delete-btn-icon fa-regular fa-trash-can"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- Edit Name -->
                         <div class="info-box">
@@ -238,8 +247,8 @@
             <!-- Social Link Page -->
             <div class="social">
                 <!-- Profile Picture -->
-                <div class="social--pic">
-                    <div class="social--pic-inner">
+                <div id="cardProfileImgCircle" class="social--pic">
+                    <div id="cardProfileImgPlaceholder" class="social--pic-inner">
                         <i class="social--pic-inner-icon fa-solid fa-user"></i>
                     </div>
                 </div>
