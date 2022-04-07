@@ -637,7 +637,8 @@ html, body {
     align-items: center;
     min-height: 4.5rem;
     padding: 1.5rem 3rem;
-    border: 1rem solid var(--gray);
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all .5s;
 }
 
