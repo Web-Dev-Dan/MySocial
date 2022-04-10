@@ -245,10 +245,17 @@
         <!-- Main -->
         <main class="main">
             <!-- Download Container -->
-            <div class="download-card-container">
-                <button class="download-btn">
-                    <i class="download-btn--icon fa-solid fa-file-arrow-down"></i>
-                    <p class="download-btn--text">Download All</p>
+            <div class="export-card-container">
+                <div id="exportBubble" class="export-bubble">
+                    <button id="closeExportBubbleBtn" class="export-bubble--close-btn">
+                        <i class="export-bubble--close-icon fa-solid fa-xmark"></i>
+                    </button>
+                    <div class="export-bubble--tail"></div>
+                    <p class="export-bubble--text">Export your MySocial card once you have finished with the design!</p>
+                </div>
+                <button id="exportBtn" class="export-btn">
+                    <p class="export-btn--text">Export</p>
+                    <i class="export-btn--icon fa-solid fa-file-export"></i>
                 </button>
             </div>
             <!-- Social Link Page -->
