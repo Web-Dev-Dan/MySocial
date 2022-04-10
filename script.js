@@ -153,8 +153,10 @@ const skillFigma = document.getElementById('skillFigma');
 skillsBtns.forEach(btn => {
     btn.addEventListener('click', function (e) {
         if (e.target.classList.contains('info-box--skills-btn')) {
+            // console.log(e.target);
             updateSkills(e.target);
         } else if (e.target.classList.contains('skills-btn-icon')) {
+            // console.log(e.target.parentElement);
             updateSkills(e.target.parentElement);
         }
     });
@@ -280,8 +282,10 @@ function updateNumberOfLinksSelected(btn) {
     // Update Number of Links Buttons Selected:
     if (btn.classList.contains('link-btn-selected')) {
         linkBtnsSelected += 1;
+        // console.log(linkBtnsSelected);
     } else {
         linkBtnsSelected -= 1;
+        // console.log(linkBtnsSelected);
     }
     // Display or Hide Links Container:
     if (linkBtnsSelected === 0) {
@@ -486,7 +490,6 @@ deleteProfileImgBtn.addEventListener('click', function () {
 
 
 
-
 // Update MySocial
 function updateMySocial() {
     const cardName = document.getElementById('cardName');
@@ -514,4 +517,35 @@ function updateMySocial() {
         cardAbout.classList.remove('element-hidden');
         cardAbout.textContent = updateAboutTextarea.value;
     }
+}
+
+
+
+// Close Export Button Modal
+const closeExportBubbleBtn = document.getElementById('closeExportBubbleBtn');
+const exportBubble = document.getElementById('exportBubble');
+
+closeExportBubbleBtn.addEventListener('click', closeExportBubble);
+
+function closeExportBubble() {
+    exportBubble.classList.add('element-hidden');
+}
+
+
+
+// HTML / CSS Template
+let allTemplate = 'Code here';
+
+// Download All Button
+const exportBtn = document.getElementById('exportBtn');
+
+exportBtn.addEventListener('click', exportClicked);
+
+function exportClicked() {
+    if (exportBubble.classList.contains('element-hidden')) {
+        // Nothing
+    } else {
+        exportBubble.classList.add('element-hidden');
+    }
+    console.log('Export clicked!');
 }
