@@ -1,11 +1,10 @@
 :root {
-    /* --font-primary: 'Oswald', sans-serif; */
     --font-primary: 'Raleway', sans-serif;
     --color-primary: #333;
-
     --background-color: #ffffff;
     --text-color: #333333;
     --gray: rgb(235, 235, 235);
+    --green: rgb(17, 175, 17);
 }
 
 * {
@@ -191,7 +190,6 @@ html, body {
 }
 
 .sidebar-container {
-    /* background-color: red; */
     min-height: 20rem;
 }
 
@@ -251,6 +249,7 @@ html, body {
     transition: all .5s;
 }
 
+/* --------- */
 
 .profile-img-preview-container {
     width: 100%;
@@ -292,6 +291,7 @@ html, body {
     color: var(--text-color);
 }
 
+/* --------- */
 
 .info-box--title {
     color: var(--text-color);
@@ -358,7 +358,6 @@ html, body {
 .skills-btn-icon {
     color: var(--text-color);
     font-size: 3rem;
-
     transition: all .5s;
 }
 
@@ -620,7 +619,8 @@ html, body {
     color: white;
 }
 
-.download-card-container {
+/* Export Button */
+.export-card-container {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
@@ -630,7 +630,7 @@ html, body {
     z-index: 100;
 }
 
-.download-btn {
+.export-btn {
     background-color: var(--text-color);
     display: flex;
     justify-content: center;
@@ -642,25 +642,76 @@ html, body {
     transition: all .5s;
 }
 
-.download-btn:hover {
+.export-btn:hover {
     cursor: pointer;
 }
 
-.download-btn:active {
+.export-btn:active {
     transform: translateY(.5rem);
 }
 
-.download-btn--icon {
+.export-btn--icon {
     color: var(--background-color);
     font-size: 2rem;
-    margin-right: 1.5rem;
+    margin-left: 1.5rem;
 }
 
-.download-btn--text {
+.export-btn--text {
     color: var(--background-color);
     font-size: 2rem;
 }
 
+.export-bubble {
+    position: absolute;
+    top: -250%;
+    right: 0;
+    min-width: 27rem;
+    height: 10rem;
+    padding: 0 4rem;
+    background-color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.export-bubble--tail {
+    width: 0;
+    height: 0;
+    border: 2rem solid transparent;
+    border-bottom: 2rem solid var(--green);
+    transform: rotate(180deg);
+    position: absolute;
+    top: 100%;
+    right: 25%;
+}
+
+.export-bubble--text {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 600;
+    color: white;
+}
+
+.export-bubble--close-btn {
+    background-color: transparent;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+}
+
+.export-bubble--close-btn:hover {
+    cursor: pointer;
+}
+
+.export-bubble--close-icon {
+    font-size: 2rem;
+    color: white;
+}
 
 
 
