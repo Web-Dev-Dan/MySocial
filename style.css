@@ -1,6 +1,8 @@
 :root {
+    /* --font-primary: 'Oswald', sans-serif; */
     --font-primary: 'Raleway', sans-serif;
     --color-primary: #333;
+
     --background-color: #ffffff;
     --text-color: #333333;
     --gray: rgb(235, 235, 235);
@@ -17,6 +19,7 @@
 html, body {
     font-size: 62.5%;
     font-family: var(--font-primary);
+    overflow: hidden;
 }
 
 
@@ -190,6 +193,7 @@ html, body {
 }
 
 .sidebar-container {
+    /* background-color: red; */
     min-height: 20rem;
 }
 
@@ -252,12 +256,14 @@ html, body {
 /* --------- */
 
 .profile-img-preview-container {
+    /* background-color: red; */
     width: 100%;
     height: 16rem;
     margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* display: none; */
 }
 
 .profile-img-preview-circle {
@@ -349,6 +355,7 @@ html, body {
     height: 4.5rem;
     margin: .3rem;
     border: .1rem solid gray;
+    /* transition: all .5s; */
 }
 
 .info-box--skills-btn:hover {
@@ -358,12 +365,14 @@ html, body {
 .skills-btn-icon {
     color: var(--text-color);
     font-size: 3rem;
+
     transition: all .5s;
 }
 
 .skills-btn-selected {
     background-color: var(--text-color);
     color: var(--background-color);
+    /* transition: all .5s; */
 }
 
 .skills-btn-selected .skills-btn-icon {
@@ -374,6 +383,7 @@ html, body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
 }
 
 .info-box--links-btn {
@@ -403,6 +413,7 @@ html, body {
 
 .link-btn-icon {
     font-size: 2.5rem;
+    /* margin-right: 1rem; */
     color: var(--text-color);
     transition: all .5s;
 }
@@ -443,6 +454,9 @@ html, body {
 
 
 
+
+
+
 .toggle-sidebar-icon-closed {
     transform: rotate(180deg);
 }
@@ -457,6 +471,7 @@ html, body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     overflow: hidden;
     transition: all .5s;
@@ -637,6 +652,7 @@ html, body {
     align-items: center;
     min-height: 4.5rem;
     padding: 1.5rem 3rem;
+    /* border: 1rem solid var(--gray); */
     border: none;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all .5s;
@@ -713,8 +729,35 @@ html, body {
     color: white;
 }
 
+/*
+.choose-file-btn {
+    flex: 1;
+    min-height: 4.5rem;
+    border: none;
+    display: flex;
+    transition: all .5s;
+}
+
+.choose-file-btn-label:hover {
+    cursor: pointer;
+}
+
+.choose-file-btn-icon {
+    color: var(--text-color);
+    margin-right: 1rem;
+    transition: all .5s;
+}
+*/
+
+
 
 
 .element-hidden {
     display: none;
+}
+
+.markup-textarea {
+    position: absolute;
+    top: 0;
+    right: -150%;
 }
