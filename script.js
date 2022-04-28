@@ -490,6 +490,8 @@ deleteProfileImgBtn.addEventListener('click', function () {
 
 
 
+
+
 // Update MySocial
 function updateMySocial() {
     const cardName = document.getElementById('cardName');
@@ -532,9 +534,24 @@ function closeExportBubble() {
 }
 
 
+// ----- ✨ MARKUP ✨ -----
+// HTML / CSS / JavaScript Template
+const markupTextArea = document.getElementById('markupTextArea');
 
-// HTML / CSS Template
-let allTemplate = 'Code here';
+let boilerPlate = `
+    
+`;
+
+markupTextArea.value = `
+    ${boilerPlate}
+`;
+
+
+
+function updateMarkup() {
+    // UPDATE EACH CODE SEGMENT AND THE ALL SECTION
+}
+
 
 // Download All Button
 const exportBtn = document.getElementById('exportBtn');
@@ -548,4 +565,6 @@ function exportClicked() {
         exportBubble.classList.add('element-hidden');
     }
     console.log('Export clicked!');
+    markupTextArea.select();
+    document.execCommand('copy');
 }
