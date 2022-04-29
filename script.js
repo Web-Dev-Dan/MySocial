@@ -167,57 +167,72 @@ function updateSkills(button) {
         button.classList.toggle('skills-btn-selected');
         skillHTML.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        htmlSkillSelected = true;
     } else if (button.classList.contains('btn-css')) {
         button.classList.toggle('skills-btn-selected');
         skillCSS.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        cssSkillSelected = true;
     } else if (button.classList.contains('btn-bootstrap')) {
         button.classList.toggle('skills-btn-selected');
         skillBootstrap.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        bootstrapSkillSelected = true;
     } else if (button.classList.contains('btn-scss')) {
         button.classList.toggle('skills-btn-selected');
         skillSCSS.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        scssSkillSelected = true;
     } else if (button.classList.contains('btn-javascript')) {
         button.classList.toggle('skills-btn-selected');
         skillJavaScript.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        javascriptSkillSelected = true;
     } else if (button.classList.contains('btn-react')) {
         button.classList.toggle('skills-btn-selected');
         skillReact.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        reactSkillSelected = true;
     } else if (button.classList.contains('btn-vue')) {
         button.classList.toggle('skills-btn-selected');
         skillVue.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        vueSkillSelected = true;
     } else if (button.classList.contains('btn-angular')) {
         button.classList.toggle('skills-btn-selected');
         skillAngular.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        angularSkillSelected = true;
     } else if (button.classList.contains('btn-node-js')) {
         button.classList.toggle('skills-btn-selected');
         skillNodeJS.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        nodeSkillSelected = true;
     } else if (button.classList.contains('btn-python')) {
         button.classList.toggle('skills-btn-selected');
         skillPython.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        pythonSkillSelected = true;
     } else if (button.classList.contains('btn-php')) {
         button.classList.toggle('skills-btn-selected');
         skillPHP.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        phpSkillSelected = true;
     } else if (button.classList.contains('btn-java')) {
         button.classList.toggle('skills-btn-selected');
         skillJava.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        javaSkillSelected = true;
     } else if (button.classList.contains('btn-figma')) {
         button.classList.toggle('skills-btn-selected');
         skillFigma.classList.toggle('skills-box-shown');
         updateNumberOfSkillsSelected(button);
+        figmaSkillSelected = true;
     } else {
         return;
     }
+    updateMarkupSkills();
+    updateBoilerPlate();
 }
 
 function updateNumberOfSkillsSelected(btn) {
@@ -299,66 +314,86 @@ function updateLinks(button) {
     if (button.classList.contains('link-btn-profile')) {
         if (button.classList.contains('link-btn-selected')) {
             linkProfile.classList.remove('element-hidden');
+            portfolioLinkSelected = true;
         } else {
             linkProfile.classList.add('element-hidden');
+            portfolioLinkSelected = false;
         }
     }
     if (button.classList.contains('link-btn-github')) {
         if (button.classList.contains('link-btn-selected')) {
             linkGitHub.classList.remove('element-hidden');
+            githubLinkSelected = true;
         } else {
             linkGitHub.classList.add('element-hidden');
+            githubLinkSelected = true;
         }
     }
     if (button.classList.contains('link-btn-linkedin')) {
         if (button.classList.contains('link-btn-selected')) {
             linkLinkedIn.classList.remove('element-hidden');
+            linkedinLinkSelected = true;
         } else {
             linkLinkedIn.classList.add('element-hidden');
+            linkedinLinkSelected = false;
         }
     }
     if (button.classList.contains('link-btn-twitter')) {
         if (button.classList.contains('link-btn-selected')) {
             linkTwitter.classList.remove('element-hidden');
+            twitterLinkSelected = true;
         } else {
             linkTwitter.classList.add('element-hidden');
+            twitterLinkSelected = false;
         }
     }
     if (button.classList.contains('link-btn-hashnode')) {
         if (button.classList.contains('link-btn-selected')) {
             linkHashnode.classList.remove('element-hidden');
+            hashnodeLinkSelected = true;
         } else {
             linkHashnode.classList.add('element-hidden');
+            hashnodeLinkSelected = false;
         }
     }
     if (button.classList.contains('link-btn-youtube')) {
         if (button.classList.contains('link-btn-selected')) {
             linkYouTube.classList.remove('element-hidden');
+            youtubeLinkSelected = true;
         } else {
             linkYouTube.classList.add('element-hidden');
+            youtubeLinkSelected = false;
         }
     }
     if (button.classList.contains('link-btn-facebook')) {
         if (button.classList.contains('link-btn-selected')) {
             linkFacebook.classList.remove('element-hidden');
+            facebookLinkSelected = true;
         } else {
             linkFacebook.classList.add('element-hidden');
+            facebookLinkSelected = false;
         }
     }
     if (button.classList.contains('link-btn-instagram')) {
         if (button.classList.contains('link-btn-selected')) {
             linkInstagram.classList.remove('element-hidden');
+            instagramLinkSelected = true;
         } else {
             linkInstagram.classList.add('element-hidden');
+            instagramLinkSelected = false;
         }
     }
     if (button.classList.contains('link-btn-email')) {
         if (button.classList.contains('link-btn-selected')) {
             linkEmail.classList.remove('element-hidden');
+            emailLinkSelected = true;
         } else {
             linkEmail.classList.add('element-hidden');
+            emailLinkSelected = false;
         }
     }
+    updateMarkupLinks();
+    updateBoilerPlate();
 }
 
 
@@ -557,9 +592,10 @@ let hasBoilerPlateLinks = false;
 
 let boilerPlateName = 'John Smith';
 let boilerPlateLocation = 'London, UK';
-let boilerPlateAbout;
+let boilerPlateAbout = '';
 let boilerPlateAboutText = 'Front-End Web Developer';
-let boilerPlateSkills;
+let boilerPlateSkills = '';
+let boilerPlateLinks = '';
 
 
 function updateMarkupName(name) {
@@ -582,6 +618,102 @@ function updateMarkupAbout(about) {
         boilerPlateAbout = '';
     }
 }
+
+let htmlSkillSelected = false;
+let cssSkillSelected = false;
+let bootstrapSkillSelected = false;
+let scssSkillSelected = false;
+let javascriptSkillSelected = false;
+let reactSkillSelected = false;
+let vueSkillSelected = false;
+let angularSkillSelected = false;
+let nodeSkillSelected = false;
+let pythonSkillSelected = false;
+let phpSkillSelected = false;
+let javaSkillSelected = false;
+let figmaSkillSelected = false;
+
+function updateMarkupSkills() {
+    if (skillBtnsSelected !== 0) {
+        console.log('Number of Skills: ' + skillBtnsSelected);
+        console.log('Skills will be displayed!');
+        boilerPlateSkills = `
+        <!-- Skills -->
+        <div class="card-skills">
+            ${htmlSkillSelected ? `<p class="card-skills--box">HTML</p>` : ''}
+            ${cssSkillSelected ? `<p class="card-skills--box">CSS</p>` : ''}
+            ${bootstrapSkillSelected ? `<p class="card-skills--box">Bootstrap</p>` : ''}
+            ${scssSkillSelected ? `<p class="card-skills--box">SCSS</p>` : ''}
+            ${javaSkillSelected ? `<p class="card-skills--box">JavaScript</p>` : ''}
+            ${reactSkillSelected ? `<p class="card-skills--box">React</p>` : ''}
+            ${vueSkillSelected ? `<p class="card-skills--box">Vue</p>` : ''}
+            ${angularSkillSelected ? `<p class="card-skills--box">Angular</p>` : ''}
+            ${nodeSkillSelected ? `<p class="card-skills--box">Node JS</p>` : ''}
+            ${pythonSkillSelected ? `<p class="card-skills--box">Python</p>` : ''}
+            ${phpSkillSelected ? `<p class="card-skills--box">PHP</p>` : ''}
+            ${javaSkillSelected ? `<p class="card-skills--box">Java</p>` : ''}
+            ${figmaSkillSelected ? `<p class="card-skills--box">Figma</p>` : ''}
+        </div>
+        `;
+    } else {
+        boilerPlateSkills = '';
+    }
+}
+
+portfolioLinkSelected = false;
+githubLinkSelected = false;
+linkedinLinkSelected = false;
+twitterLinkSelected = false;
+hashnodeLinkSelected = false;
+youtubeLinkSelected = false;
+facebookLinkSelected = false;
+instagramLinkSelected = false;
+emailLinkSelected = false;
+
+function updateMarkupLinks() {
+    if (linkBtnsSelected !== 0) {
+        boilerPlateLinks = `
+        <!-- Links -->
+        <div class="card-links">
+            ${portfolioLinkSelected ? `<a class="card-links--btn link-profile" href="https://www.google.com" target="_blank"
+                rel="noopener noreferrer">
+                <i class="card-links--btn-icon fa-solid fa-circle-user"></i>
+            </a>` : ''}
+            ${githubLinkSelected ? `<a class="card-links--btn link-github">
+                <i class="card-links--btn-icon fa-brands fa-github"></i>
+            </a>` : ''}
+            ${linkedinLinkSelected ? `<a class="card-links--btn link-linkedin">
+                <i class="card-links--btn-icon fa-brands fa-linkedin"></i>
+            </a>` : ''}
+            ${twitterLinkSelected ? `<a class="card-links--btn link-twitter">
+                <i class="card-links--btn-icon fa-brands fa-twitter"></i>
+            </a>` : ''}
+            ${hashnodeLinkSelected ? `<a class="card-links--btn link-hashnode">
+                <i class="card-links--btn-icon fa-brands fa-hashnode"></i>
+            </a>` : ''}
+            ${youtubeLinkSelected ? `<a class="card-links--btn link-youtube">
+                <i class="card-links--btn-icon fa-brands fa-youtube"></i>
+            </a>` : ''}
+            ${facebookLinkSelected ? `<a class="card-links--btn link-facebook">
+                <i class="card-links--btn-icon fa-brands fa-facebook-f"></i>
+            </a>` : ''}
+            ${instagramLinkSelected ? `<a class="card-links--btn link-instagram">
+                <i class="card-links--btn-icon fa-brands fa-instagram-square"></i>
+            </a>` : ''}
+            ${emailLinkSelected ? `<a class="card-links--btn link-email">
+                <i class="card-links--btn-icon fa-regular fa-envelope"></i>
+            </a>` : ''}
+        </div>
+        `;
+    } else {
+        boilerPlateLinks = '';
+    }
+}
+
+
+
+// let skillBtnsSelected = 0;
+// let linkBtnsSelected = 0;
 
 
 
@@ -1056,53 +1188,9 @@ Created by Daniel Healy, 2022.
             <div class="card-location--text">${boilerPlateLocation}</div>
         </div>
         ${boilerPlateAbout}
-        <!-- Skills -->
-        <div class="card-skills">
-            <p class="card-skills--box">HTML</p>
-            <p class="card-skills--box">CSS</p>
-            <p class="card-skills--box">Bootstrap</p>
-            <p class="card-skills--box">SCSS</p>
-            <p class="card-skills--box">JavaScript</p>
-            <p class="card-skills--box">React</p>
-            <p class="card-skills--box">Vue</p>
-            <p class="card-skills--box">Angular</p>
-            <p class="card-skills--box">Node JS</p>
-            <p class="card-skills--box">Python</p>
-            <p class="card-skills--box">PHP</p>
-            <p class="card-skills--box">Java</p>
-            <p class="card-skills--box">Figma</p>
-        </div>
-        <!-- Links -->
-        <div class="card-links">
-            <a class="card-links--btn link-profile" href="https://www.google.com" target="_blank"
-                rel="noopener noreferrer">
-                <i class="card-links--btn-icon fa-solid fa-circle-user"></i>
-            </a>
-            <a class="card-links--btn link-github">
-                <i class="card-links--btn-icon fa-brands fa-github"></i>
-            </a>
-            <a class="card-links--btn link-linkedin">
-                <i class="card-links--btn-icon fa-brands fa-linkedin"></i>
-            </a>
-            <a class="card-links--btn link-twitter">
-                <i class="card-links--btn-icon fa-brands fa-twitter"></i>
-            </a>
-            <a class="card-links--btn link-hashnode">
-                <i class="card-links--btn-icon fa-brands fa-hashnode"></i>
-            </a>
-            <a class="card-links--btn link-youtube">
-                <i class="card-links--btn-icon fa-brands fa-youtube"></i>
-            </a>
-            <a class="card-links--btn link-facebook">
-                <i class="card-links--btn-icon fa-brands fa-facebook-f"></i>
-            </a>
-            <a class="card-links--btn link-instagram">
-                <i class="card-links--btn-icon fa-brands fa-instagram-square"></i>
-            </a>
-            <a class="card-links--btn link-email">
-                <i class="card-links--btn-icon fa-regular fa-envelope"></i>
-            </a>
-        </div>
+        ${boilerPlateSkills}
+        ${boilerPlateLinks}
+        
     </div>
 </div>
 </body>
