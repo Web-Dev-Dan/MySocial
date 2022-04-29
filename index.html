@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/imgs/logo.png">
     <title>MySocial | House your links in one place.</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -27,7 +29,8 @@
 <body>
     <!-- Header / Navigation -->
     <header class="header">
-        <h1 class="header-h1"><i class="header-icon fa-solid fa-link"></i> MySocial</h1>
+        <h1 class="header-h1"><i class="header-icon fa-solid fa-link"></i> <span class="secondary-color">My</span>Social
+        </h1>
         <div class="header-buttons">
             <button id="toggleLightModeBtn" class="header-btn">
                 <i id="toggleLightModeBtnIcon" class="header-btn-icon fa-solid fa-moon"></i>
@@ -236,7 +239,9 @@
                             <i id="toggleTemplatesBtnIcon" class="toggle-btn-icon fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <div class="sidebar-container templates-container container-hidden"></div>
+                    <div class="sidebar-container templates-container container-hidden">
+                        <p class="temporary-text">Coming soon...</p>
+                    </div>
                 </div>
                 <!-- Customisation -->
                 <div class="sidebar-option">
@@ -247,6 +252,7 @@
                         </button>
                     </div>
                     <div class="sidebar-container customisation-container container-hidden">
+                        <p class="temporary-text">Coming soon...</p>
                     </div>
                 </div>
             </div>
