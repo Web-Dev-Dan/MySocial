@@ -501,8 +501,10 @@ function updateMySocial() {
     // Update Name
     if (updateNameInput.value === '') {
         cardName.textContent = 'John Smith';
+        updateMarkupName('John Smith');
     } else {
         cardName.textContent = updateNameInput.value;
+        updateMarkupName(updateNameInput.value);
     }
 
     // Update Location
@@ -537,20 +539,324 @@ function closeExportBubble() {
 // ----- ✨ MARKUP ✨ -----
 // HTML / CSS / JavaScript Template
 const markupTextArea = document.getElementById('markupTextArea');
+let hasBoilerPlateAbout = false;
+let hasBoilerPlateSkills = false;
+let hasBoilerPlateLinks = false;
+
+let boilerPlateName = 'User';
+let boilerPlateLocation = 'New York, US';
+let boilerPlateAbout;
+let boilerPlateAboutText = 'Front-End Web Developer';
+
+if (hasBoilerPlateAbout) {
+    boilerPlateAbout = `
+        <!-- About -->
+        <p class="card-about">${boilerPlateAboutText}</p>
+    `;
+} else {
+    boilerPlateAbout = '';
+}
+
+function updateMarkupName(name) {
+    boilerPlateName = name;
+}
+
+function updateMarkup() {
+    // UPDATE EACH CODE SEGMENT AND THE ALL SECTION
+    updateMarkupName();
+}
+
 
 let boilerPlate = `
-    
+<!-- 
+Thank you for using MySocial 😊 
+Created by Daniel Healy, 2022.
+(Twitter: @web_dev_dan).
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Meta Data -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Fonts (Raleway) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Title -->
+<title>MySocial | ${boilerPlateName}</title>
+<!-- CSS Styling -->
+<style>
+    /* Universal */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        font-size: 62.5%;
+        font-family: 'Raleway', sans-serif;
+        background-color: rgb(235, 235, 235);
+    }
+
+    /* Background */
+    .container {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* MySocial Card */
+    .card {
+        background-color: white;
+        margin: 10rem auto;
+        padding: 5rem 10rem;
+        border-radius: .5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    /* Profile Image */
+    .card-pic {
+        background-color: lightgray;
+        /* background: url('/PROFILE-PICTURE.jpg'); (INSERT PICTURE HERE)*/
+        background-position: center;
+        background-size: cover;
+        width: 16rem;
+        height: 16rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    /* Name */
+    .card-name {
+        font-size: 3rem;
+        text-align: center;
+        max-width: 30rem;
+        margin-top: 2rem;
+    }
+
+    /* Location */
+    .card-location {
+        max-width: 30rem;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-location--icon {
+        margin-right: .8rem;
+        color: gray;
+    }
+
+    .card-location--text {
+        color: gray;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    /* About */
+    .card-about {
+        color: #333;
+        max-width: 30rem;
+        margin-top: 2rem;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    /* Skills */
+    .card-skills {
+        max-width: 30rem;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .card-skills--box {
+        font-size: 1.2rem;
+        margin: .2rem .2rem;
+        padding: .5rem 1rem;
+        background-color: gray;
+        color: white;
+    }
+
+    /* Links */
+    .card-links {
+        width: 100%;
+        min-width: 30rem;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-links--btn {
+        width: 100%;
+        height: 6rem;
+        margin-top: .5rem;
+        border: .5rem solid white;
+        transition: all .5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .card-links--btn:first-child {
+        margin-top: 0;
+    }
+
+    .card-links--btn:hover {
+        transform: scale(110%);
+    }
+
+    .card-links--btn-icon {
+        font-size: 3rem;
+        color: white;
+    }
+
+    .link-profile {
+        background-color: #878787;
+    }
+
+    .link-github {
+        background-color: #171515;
+    }
+
+    .link-linkedin {
+        background-color: #0e76a8;
+    }
+
+    .link-twitter {
+        background-color: #00acee;
+    }
+
+    .link-hashnode {
+        background-color: #3961F5;
+    }
+
+    .link-youtube {
+        background-color: #ff0000;
+    }
+
+    .link-facebook {
+        background-color: #3b5998;
+    }
+
+    .link-instagram {
+        background-color: #833AB4;
+    }
+
+    .link-email {
+        background-color: #878787;
+    }
+
+    /* Media Queries */
+    @media only screen and (max-width: 550px) {
+        .card {
+            width: 100vw;
+            min-height: 100vh;
+            margin: 0 0;
+            padding: 5rem 5rem;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div class="card">
+        <!-- Profile Image -->
+        <div class="card-pic"></div>
+        <!-- Name -->
+        <h2 class="card-name">${boilerPlateName}</h2>
+        <!-- Location -->
+        <div class="card-location">
+            <i class="card-location--icon fa-solid fa-location-dot"></i>
+            <div class="card-location--text">${boilerPlateLocation}</div>
+        </div>
+        ${boilerPlateAbout}
+        <!-- Skills -->
+        <div class="card-skills">
+            <p class="card-skills--box">HTML</p>
+            <p class="card-skills--box">CSS</p>
+            <p class="card-skills--box">Bootstrap</p>
+            <p class="card-skills--box">SCSS</p>
+            <p class="card-skills--box">JavaScript</p>
+            <p class="card-skills--box">React</p>
+            <p class="card-skills--box">Vue</p>
+            <p class="card-skills--box">Angular</p>
+            <p class="card-skills--box">Node JS</p>
+            <p class="card-skills--box">Python</p>
+            <p class="card-skills--box">PHP</p>
+            <p class="card-skills--box">Java</p>
+            <p class="card-skills--box">Figma</p>
+        </div>
+        <!-- Links -->
+        <div class="card-links">
+            <a class="card-links--btn link-profile" href="https://www.google.com" target="_blank"
+                rel="noopener noreferrer">
+                <i class="card-links--btn-icon fa-solid fa-circle-user"></i>
+            </a>
+            <a class="card-links--btn link-github">
+                <i class="card-links--btn-icon fa-brands fa-github"></i>
+            </a>
+            <a class="card-links--btn link-linkedin">
+                <i class="card-links--btn-icon fa-brands fa-linkedin"></i>
+            </a>
+            <a class="card-links--btn link-twitter">
+                <i class="card-links--btn-icon fa-brands fa-twitter"></i>
+            </a>
+            <a class="card-links--btn link-hashnode">
+                <i class="card-links--btn-icon fa-brands fa-hashnode"></i>
+            </a>
+            <a class="card-links--btn link-youtube">
+                <i class="card-links--btn-icon fa-brands fa-youtube"></i>
+            </a>
+            <a class="card-links--btn link-facebook">
+                <i class="card-links--btn-icon fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="card-links--btn link-instagram">
+                <i class="card-links--btn-icon fa-brands fa-instagram-square"></i>
+            </a>
+            <a class="card-links--btn link-email">
+                <i class="card-links--btn-icon fa-regular fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
 `;
+
 
 markupTextArea.value = `
     ${boilerPlate}
 `;
 
-
-
-function updateMarkup() {
-    // UPDATE EACH CODE SEGMENT AND THE ALL SECTION
-}
 
 
 // Download All Button
