@@ -675,8 +675,7 @@ function updateMarkupLinks() {
         boilerPlateLinks = `
         <!-- Links -->
         <div class="card-links">
-            ${portfolioLinkSelected ? `<a class="card-links--btn link-profile" href="https://www.google.com" target="_blank"
-                rel="noopener noreferrer">
+            ${portfolioLinkSelected ? `<a class="card-links--btn link-profile">
                 <i class="card-links--btn-icon fa-solid fa-circle-user"></i>
             </a>` : ''}
             ${githubLinkSelected ? `<a class="card-links--btn link-github">
@@ -1225,8 +1224,29 @@ function exportClicked() {
         exportBubble.classList.add('element-hidden');
     }
     console.log('Export clicked!');
-
+    // Notify:
+    createNotification();
     // Copy to Clipboard:
     markupTextArea.select();
     document.execCommand('copy');
+}
+
+
+
+// ----- 💬 Copied to Clipboard 💬 -----
+function createNotification() {
+    const mainContainer = document.querySelector('.main');
+
+    const newNotification = document.createElement('div');
+    newNotification.classList.add('copied-notification-box');
+    mainContainer.appendChild(newNotification);
+
+    const newNotificationIcon = document.createElement('i');
+    newNotificationIcon.classList.add('fa-solid', 'fa-download', 'copied-notification-box-icon');
+    newNotification.appendChild(newNotificationIcon);
+
+    const newNotificationText = document.createElement('p');
+    newNotificationText.classList.add('copied-notification-box-text');
+    newNotificationText.textContent = 'Copied to clipboard...';
+    newNotification.appendChild(newNotificationText);
 }
