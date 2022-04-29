@@ -765,6 +765,10 @@ html, body {
     position: absolute;
     top: 0;
     right: -150%;
+    -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
 }
 
 
@@ -777,4 +781,49 @@ html, body {
 
 .templates-container, .customisation-container {
     padding-top: 5rem;
+}
+
+
+
+/* Copied Notification Box */
+.copied-notification-box {
+    background-color: var(--green);
+    padding: 2rem 4rem;
+    border-radius: .5rem;
+    position: absolute;
+    bottom: 6rem;
+    right: 2rem;
+    z-index: 300;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: notify;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.copied-notification-box-icon {
+    color: white;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+}
+
+.copied-notification-box-text {
+    color: white;
+    font-size: 2rem;
+}
+
+@keyframes notify {
+    0% {
+        bottom: 6rem;
+        right: 2rem;
+        z-index: 300;
+    }
+    100% {
+        bottom: 16rem;
+        right: 2rem;
+        z-index: 200;
+        opacity: 0;
+    }
 }
