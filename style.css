@@ -2,6 +2,7 @@
     /* --font-primary: 'Oswald', sans-serif; */
     --font-primary: 'Raleway', sans-serif;
     --color-primary: #333;
+    --color-secondary: rgb(194, 17, 17);
 
     --background-color: #ffffff;
     --text-color: #333333;
@@ -22,6 +23,9 @@ html, body {
     overflow: hidden;
 }
 
+.secondary-color {
+    color: var(--green);
+}
 
 /* HEADER & NAVIGATION */
 .header {
@@ -43,6 +47,7 @@ html, body {
 
 .header-icon {
     color: var(--text-color);
+    color: var(--green);
 }
 
 .header-buttons {
@@ -760,4 +765,16 @@ html, body {
     position: absolute;
     top: 0;
     right: -150%;
+}
+
+
+/* Temporary Styling */
+.temporary-text {
+    font-size: 2rem;
+    color: gray;
+    text-align: center;
+}
+
+.templates-container, .customisation-container {
+    padding-top: 5rem;
 }
